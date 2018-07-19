@@ -22,11 +22,9 @@ interface SignatureInterface
     public function create();
 
     /**
-     * Verify signature when Client will be send callback request.
+     * Array params signature
      *
-     * @param $signature
-     * @param array $params
-     * @return bool
+     * @return array
      */
-    public function verify($signature, array $params);
+    public function toArray();
 }

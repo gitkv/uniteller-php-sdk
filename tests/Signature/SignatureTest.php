@@ -40,17 +40,4 @@ class SignatureTest extends TestCase
 
         $this->assertSame('A5FE1C95A2819EBACFC2145EE83742F6', $sig);
     }
-
-    public function testSignatureVerifying()
-    {
-        $sig = new SignaturePayment;
-
-        $results = $sig->verify('3F728AA479E50F5B10EE6C20258BFF88', [
-            'Order_ID' => 'FOO',
-            'Status'   => 'paid',
-            'Password' => 'LONG-PWD',
-        ]);
-
-        $this->assertTrue($results);
-    }
 }

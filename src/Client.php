@@ -458,4 +458,16 @@ class Client implements ClientInterface
 
         return $parameters;
     }
+
+    /**
+     * Verify signature when Client will be send callback request.
+     *
+     * @param $signature
+     * @param array $params
+     * @return bool
+     */
+    public function verifyCallbackSignature($signature, array $params)
+    {
+        return strtoupper(md5(join('', $params) . $this->getPassword())) === $signature;
+    }
 }

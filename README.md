@@ -173,7 +173,7 @@ Receive incoming parameters from gateway and verifying signature.
 
 ```php
 <?php
-if (! $uniteller->getSignaturePayment()->verify('signature_from_post_params', ['all_parameters_from_post'])) {
+if (! $uniteller->verifyCallbackSignature('signature_from_post', ['all_parameters_from_post'])) {
     return 'invalid_signature';
 }
 ```

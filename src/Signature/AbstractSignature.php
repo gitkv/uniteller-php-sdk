@@ -31,16 +31,4 @@ abstract class AbstractSignature implements SignatureInterface, ArraybleInterfac
 
         return strtoupper(md5($string));
     }
-
-    /**
-     * Verify signature when Client will be send callback request.
-     *
-     * @param $signature
-     * @param array $params
-     * @return bool
-     */
-    public function verify($signature, array $params)
-    {
-        return strtoupper(md5(join('', $params))) === $signature;
-    }
 }
