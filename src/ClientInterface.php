@@ -53,14 +53,11 @@ interface ClientInterface
      */
     public function card($parameters);
 
-
     /**
      * Verify signature when Client will be send callback request.
      *
-     * @param $signature
      * @param array $params
      * @return bool
      */
-    public function verifyCallbackSignature($signature, array $params);
-
+    public function verifyCallbackRequest(array $params);
 }

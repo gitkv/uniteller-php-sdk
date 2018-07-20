@@ -19,7 +19,7 @@ abstract class AbstractSignature implements SignatureInterface, ArraybleInterfac
 {
 
     /**
-     * Create signature for send payment request.
+     * Create signature
      *
      * @return string
      */
@@ -30,5 +30,16 @@ abstract class AbstractSignature implements SignatureInterface, ArraybleInterfac
         }, $this->toArray()));
 
         return strtoupper(md5($string));
+    }
+
+    /**
+     * Verify signature
+     *
+     * @param string $signature
+     * @return bool
+     */
+    public function verify($signature)
+    {
+        return $this->create() === $signature;
     }
 }
